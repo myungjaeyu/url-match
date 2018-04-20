@@ -18,3 +18,7 @@ pub fn expression(pattern : &str) -> String {
     
     exp
 }
+
+pub fn regexp(expr : &str) -> Regex {
+     Regex::new(&expr).unwrap()
+}
