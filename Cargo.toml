@@ -5,7 +5,7 @@ authors = ["u4bi <admin@naver.id>"]
 description = "URL match patterns library"
 repository = "https://github.com/u4bi/url-match"
 license = "MIT"
-keywords = ["url", "pattern", "match", "url-match", "url-pattern", "regex"]
+keywords = ["url", "pattern", "match", "url-match", "url-pattern"]
 include = ["src/*.rs", "tests/*.rs", "examples/*.rs", "Cargo.toml"]
 
 [dependencies]
