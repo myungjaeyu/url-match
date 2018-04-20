@@ -1,12 +1,13 @@
 [package]
 name = "url-match"
-version = "0.1.0"
+version = "0.1.3"
 authors = ["u4bi <admin@naver.id>"]
 description = "URL match patterns library"
 repository = "https://github.com/u4bi/url-match"
 license = "MIT"
 keywords = ["url", "pattern", "match", "url-match", "url-pattern"]
 include = ["src/*.rs", "tests/*.rs", "examples/*.rs", "Cargo.toml"]
+readme = "README.md"
 
 [dependencies]
 regex = "0.2"
