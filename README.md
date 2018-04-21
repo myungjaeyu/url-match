@@ -6,6 +6,7 @@
 ```shell
 $ cargo run --example matcher_example
 $ cargo run --example matchers_example
+$ cargo run --example uri_checker_example
 ```
 
 ### Unit Test
@@ -89,6 +90,27 @@ fn main() {
             SUB_DOMAIN : 'api'
         }
     */
+
+
+    let patterns = vec![
+                    "/settings/:type",
+                    "/settings/:type",
+                    "/users/:name/:type",
+                    "/users/:name/:type",
+                    "/:name?tab=:panel",
+                    "/:name/?tab=:panel",
+                    "/?name=:NAME&level=:LEVEL&weapon=:WEAPON"
+                ];
+
+
+    let url = "/?name=u4bi&level=17&weapon=ak-47";
+
+
+    for p in patterns {
+
+        matcher(p, url);
+
+    }
 
 }
 ```
