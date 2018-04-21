@@ -1,5 +1,4 @@
 extern crate url_match;
-
 use url_match::matcher;
 
 fn main() {
@@ -18,15 +17,24 @@ fn main() {
 
     for exam in &exams {
 
-        if let &&Ok(ref v) = &exam {
+       if let &Some(ref v) = exam {
 
-            for index in 1..v.len() {
-                print!("{} / ", &v[index]);
-            }
-            
-            println!("");
+            println!("{:?}", v);
+
         }
 
     }
+
+
+    /*
+        {"type": "profile"}
+        {"type": "admin"}
+        {"name": "u4bi", "type": "repos"}
+        {"name": "u4bi", "type": "orgs"}
+        {"name": "u4bi", "panel": "stars"}
+        {"panel": "stars", "name": "u4bi"}
+        {"LEVEL": "17", "NAME": "u4bi", "WEAPON": "ak-47"}
+
+    */
 
 }

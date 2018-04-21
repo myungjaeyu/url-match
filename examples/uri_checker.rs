@@ -1,21 +1,6 @@
 extern crate url_match;
 use url_match::matcher;
 
-
-fn uri_checker(pattern: &str, url: &str) {
-
-    if let Ok(ref v) = matcher(pattern, url) {
-
-        for index in 1..v.len() {
-            print!("{} /", &v[index]);
-        }
-
-        print!("\n");
-    }
-
-}
-
-
 fn main() {
 
     let patterns = vec![
@@ -29,13 +14,22 @@ fn main() {
                 ];
 
 
-    let url = "/?name=u4bi&level=17&weapon=ak-47";
+    let uri = "/?name=u4bi&level=17&weapon=ak-47";
 
 
-    for exam in patterns {
+    for p in patterns {
 
-        uri_checker(exam, url);
+        let map = matcher(p, uri);
+
+        if map.is_some() {
+            println!("{:?}", map.unwrap());
+        }
 
     }
 
+
+    /*
+        {"LEVEL": "17", "NAME": "u4bi", "WEAPON": "ak-47"}
+
+    */
 }
