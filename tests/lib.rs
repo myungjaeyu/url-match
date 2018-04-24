@@ -104,3 +104,39 @@ fn exam8() {
     assert_eq!(map.get("SUB_DOMAIN").map(|e| *e), Some("api"));
 
 }
+
+#[test]
+fn not_matched_with_longer_path() {
+
+    let map = matcher("http://example.com/users/:name", "http://example.com/users/Kroisse/repos");
+
+    assert!(map.is_none());
+
+}
+
+#[test]
+fn not_matched_with_shorter_path() {
+
+    let map = matcher("http://example.com/settings/:type", "http://example.com/settings");
+
+    assert!(map.is_none());
+
+}
+
+#[test]
+fn not_matched_with_different_domain() {
+
+    let map = matcher("http://example.com/settings/:type", "http://example.org/settings/profile");
+
+    assert!(map.is_none());
+
+}
+
+#[test]
+fn not_matched_with_partially_matching_url() {
+
+    let map = matcher("http://example.com/users/:name/:type", "http://example.com/users/u4bi");
+
+    assert!(map.is_none());
+
+}
